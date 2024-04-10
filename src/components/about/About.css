@@ -1,0 +1,92 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150vh;
+  background-color: black;
+  border-radius: 2rem;
+}
+
+.words {
+  display: inline-block;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  font-size: 32px;
+  color: #faf9f6;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .words {
+    font-size: 15px; /* Adjust the font size for smaller screens */
+    max-width: 70%;
+  }
+}
+
+.personal-blurb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 40%;
+  flex-wrap: wrap;
+}
+
+.about-me-title {
+  color: #faf9f6;
+  font-size: 128px;
+}
+
+@media (max-width: 768px) {
+  .about-me-title {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+}
+
+/* .image-wrapper {
+  width: 30%;
+  height: 30%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .mountain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.mountain-img {
+  width: 30%;
+  height: 30%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .mountain-img {
+    width: 40%;
+    height: 20%;
+  }
+}
+
+.title-wrapper {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 20%;
+}
+
+.word-mask {
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

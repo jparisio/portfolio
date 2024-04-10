@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-right: 40px; /* Adjust margin for spacing */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navbar a:before {
+  content: attr(title);
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0; /* Initially invisible */
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  text-align: center;
+  margin-top: 4px;
+  left: 60%; /* Center horizontally */
+  top: 100%; /* Position below the link */
+  margin-left: -0.5em; /* Adjust based on your design */
+}
+
+.navbar a:hover:before {
+  opacity: 1;
+  transform: scale(1);
+}

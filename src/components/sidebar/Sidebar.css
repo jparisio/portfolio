@@ -1,0 +1,91 @@
+.burger-menu {
+  position: fixed;
+  right: 30px;
+  background-color: #c9bda5;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  transform: scale(0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.burger-menu::before,
+.burger-menu::after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background-color: black;
+  margin: 3px 0;
+  transition: 0.2s ease;
+}
+
+.burger-menu.clicked::before {
+  transform: translateY(3.5px) rotate(-45deg) scaleX(0.8);
+}
+
+.burger-menu.clicked::after {
+  transform: translateY(-3.5px) rotate(45deg) scaleX(0.8);
+}
+
+.sidebar-menu {
+  height: 100vh;
+  right: 0;
+  top: 0;
+  position: fixed;
+  background-color: #e0ddd6;
+  z-index: 98;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Default width for larger screens */
+.sidebar-menu {
+  width: 30%;
+}
+
+/* Media query for screens with a maximum width of 767px (typical for phones) */
+@media only screen and (max-width: 767px) {
+  .sidebar-menu {
+    width: 100%;
+  }
+}
+
+.body:after {
+  content: "";
+  height: 1px;
+  width: 100px;
+  background-color: black;
+  position: absolute;
+  top: 35%;
+}
+
+.link {
+  position: relative;
+  /* Add other styles for your link as needed */
+}
+
+.link:after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: black;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 30px;
+  opacity: 0; /* Initially invisible */
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.link:hover:after {
+  opacity: 1; /* Make it visible on hover */
+  transform: scale(1);
+}
