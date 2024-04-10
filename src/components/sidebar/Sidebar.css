@@ -56,13 +56,18 @@
   }
 }
 
-.body:after {
+/* .body:after {
   content: "";
   height: 1px;
   width: 100px;
   background-color: black;
   position: absolute;
   top: 35%;
+} */
+
+.body {
+  border-top: 1px solid rgb(201, 201, 201);
+  padding-top: 10px;
 }
 
 .link {
