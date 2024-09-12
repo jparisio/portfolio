@@ -1,7 +1,9 @@
+import { useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
 import "./App.css";
-import Landing from "./components/Landing";
+import Landing from "./components/landing/Landing";
 import Navbar from "./components/navbar/Navbar";
 import Preloader from "./components/Preloader";
 import Contact from "./components/contact/Contact";
@@ -11,13 +13,10 @@ import Lenis from "@studio-freight/lenis";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  const handlePreloaderComplete = function () {
+    setLoading(false);
+  };
+  console.log(loading);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -34,14 +33,25 @@ export default function App() {
     requestAnimationFrame(raf);
   }, []);
 
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start ", "end end"],
+  });
+
   return (
     <>
-      <AnimatePresence mode="wait">{loading && <Preloader />}</AnimatePresence>
-      <Navbar />
-      <Sidebar />
-      <Landing />
-      <About />
-      <Contact />
+      <div className="main-container" ref={container}>
+        <AnimatePresence mode="wait">
+          {loading && <Preloader setLoading={handlePreloaderComplete} />}
+        </AnimatePresence>
+        <Navbar />
+        <Sidebar />
+        <Landing scrollYProgress={scrollYProgress} />
+        <About scroll={scrollYProgress} />
+        <Contact />
+      </div>
     </>
   );
 }

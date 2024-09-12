@@ -1,69 +1,33 @@
 import "./About.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../../assets/mountain.jpg";
 
-export default function About() {
-  const container = useRef(null);
+export default function About({ scroll }) {
+  const cards = ["hello", "world", "this", "is", "a", "test"];
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end ", "end start"],
+    target: ref,
   });
 
-  const smParalax = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
-  const variants = {
-    initial: { opacity: 0, y: 30 },
-    animate: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: { ease: [0.33, 1, 0.68, 1], delay: 0.02 * index },
-    }),
-  };
-
-  const words =
-    "Young and aspiring developer, currently in my third year studying computer sceince.  Consistantly creating and developing passion projects to further my skillsets";
-  const title = "About Me";
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const scale = useTransform(scroll, [0, 0.25], [0.8, 1]);
+  const rotate = useTransform(scroll, [0, 0.25], [-5, 0]);
 
   return (
-    <div ref={container} className="about-wrapper">
-      <motion.div className="about">
-        <div className="title-wrapper">
-          <motion.h1
-            className="about-me-title"
-            variants={variants}
-            initial="initial"
-            whileInView="animate"
-            custom={1}
-          >
-            About Me
-          </motion.h1>
-        </div>
-        <motion.img
-          className="mountain-img"
-          src={img1}
-          alt="mountains"
-        ></motion.img>
-        <p className="personal-blurb">
-          {words.split(" ").map((word, index) => {
-            return (
-              <span className="word-mask">
-                <motion.span
-                  className="words"
-                  key={index}
-                  variants={variants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  custom={index}
-                >
-                  {word + " "}
-                </motion.span>
-              </span>
-            );
-          })}
-        </p>
-      </motion.div>
-    </div>
+    <motion.section
+      className="horizontal-view-container"
+      ref={ref}
+      style={{ scale, rotate }}
+    >
+      <div className="h-view-wrapper ">
+        <motion.div className="h-view-content" style={{ x: x }}>
+          {cards.map((item, index) => (
+            <div className="test-cards" key={index}>
+              {item}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </motion.section>
   );
 }

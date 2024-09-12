@@ -1,7 +1,8 @@
 .burger-menu {
+  /* mix-blend-mode: difference; */
   position: fixed;
   right: 30px;
-  background-color: #c9bda5;
+  background-color: white;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -11,6 +12,7 @@
   align-items: center;
   justify-content: center;
   z-index: 99;
+  mix-blend-mode: difference;
 }
 
 .burger-menu::before,
@@ -18,7 +20,8 @@
   content: "";
   height: 1px;
   width: 30px;
-  background-color: black;
+  background-color: white;
+  mix-blend-mode: difference;
   margin: 3px 0;
   transition: 0.2s ease;
 }
@@ -36,12 +39,14 @@
   right: 0;
   top: 0;
   position: fixed;
-  background-color: #e0ddd6;
+  background-color: white;
   z-index: 98;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  outline: 1px solid black;
+  border-radius: 10px;
 }
 
 /* Default width for larger screens */

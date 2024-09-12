@@ -3,12 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  background-color: white;
 }
 
 .logo {
   font-size: 30px;
   font-weight: 700;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .navbar {
