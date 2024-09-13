@@ -7,19 +7,41 @@
 .h-view-wrapper {
   position: sticky;
   top: 0;
-  background-color: black;
+  background-color: white;
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
+  gap: 5vw;
+}
+
+.h-view-header {
+  height: 35%;
+  width: 100%;
+  color: black;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 10vw;
+  margin: 0;
+  padding: 0;
+}
+
+.h-view-header h1 {
+  margin: 0;
+  padding: 0;
 }
 
 .h-view-content {
   display: flex;
-  gap: 10px;
+  gap: 5vw;
   align-items: center;
   justify-content: center;
   margin-left: 50vw;
+  /* height: 50vh; */
 }
 
 .test-cards {
@@ -28,7 +50,12 @@
   justify-content: center;
   width: 50vw;
   height: 50vh;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   border-radius: 20px;
+}
+
+.about-letter-wrapper {
+  display: inline-block;
+  overflow: hidden;
 }

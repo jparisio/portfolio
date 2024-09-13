@@ -7,3 +7,21 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* #fffaf1 */
+/* #212121 */
+
+@font-face {
+  font-family: "Riccione Serial Medium";
+  src: url("/fonts/Riccione Serial Medium Regular.ttf") format("truetype"); /* Update the path accordingly */
+}
+
+@font-face {
+  font-family: "gothic light";
+  src: url("/fonts/OPTINewsGothicLight.otf") format("truetype"); /* Update the path accordingly */
+}
+
+@font-face {
+  font-family: "calling cards";
+  src: url("/fonts/CallingCards_Bold_sample.ttf") format("truetype"); /* Update the path accordingly */
+}

@@ -1,47 +1,131 @@
 .landing-container {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  min-height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  position: sticky;
-  top: 0;
-  background-color: white;
-}
-
-.intro {
-  grid-row: 2 / span 2;
-  grid-column: 2 / span 2;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  background-color: #fefefe;
+}
+
+.intro {
+  text-align: center;
+  max-width: 900px;
+  /* margin: auto; */
+  font-family: "Riccione Serial Medium", sans-serif;
+  /* display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: center; */
+}
+
+.intro-overlay {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5rem;
+  flex-direction: column;
+  align-items: left;
+}
+
+.intro .name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: "gothic light", sans-serif;
+  padding-left: 10px;
+  text-align: left;
 }
 
 .intro h1 {
-  font-size: 100px;
-  margin: 0;
-  text-align: center;
+  font-size: 9rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 1;
+  font-family: "roboto", sans-serif;
+  margin-top: 0;
+  height: 8.5rem;
 }
 
-.intro h2 {
-  font-size: 32px;
-  font-weight: 100;
+.intro p {
   margin: 0;
-  text-align: center;
+  font-size: 60px;
 }
 
-.intro::before {
+.intro .description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.intro .location {
+  font-size: 4rem; /* Slightly smaller for location */
+  font-weight: normal;
+  font-family: "gothic light", sans-serif;
+}
+
+.location span {
+  font-family: "Riccione Serial Medium", sans-serif;
+}
+
+.line-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 40px;
+}
+
+.line-one h2 {
+  margin: 0;
+}
+
+.line-one p {
+  margin: 0;
+}
+
+.line-two p {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 2px; /* Space for underline */
+}
+
+.line-two p::after {
   content: "";
   position: absolute;
-  width: 90%;
-  height: 1px;
-  rotate: 334.1deg;
-  background-color: grey;
-  top: 10;
   left: 0;
-  animation: growWidth 0.8s forwards; /* Adjust the duration as needed */
-  animation-delay: 3s;
-  opacity: 75%;
+  bottom: 0;
+  height: 2px; /* Thickness of the underline */
+  width: 0;
+  background-color: black; /* Underline color */
+  transform-origin: left;
+  transition: width 1s ease; /* Smooth animation over 1s */
+}
+
+/* Add this class to trigger the animation automatically */
+.line-two p.underline-active::after {
+  width: 100%;
+}
+
+.mini-number {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.line-one .inspired {
+  font-family: "gothic light", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .intro h1 {
+    font-size: 5rem;
+  }
+
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.letter-wrapper {
+  display: inline-block;
+  overflow: hidden;
 }

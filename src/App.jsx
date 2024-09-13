@@ -42,16 +42,16 @@ export default function App() {
 
   return (
     <>
-      <div className="main-container" ref={container}>
-        <AnimatePresence mode="wait">
-          {loading && <Preloader setLoading={handlePreloaderComplete} />}
-        </AnimatePresence>
-        <Navbar />
-        <Sidebar />
-        <Landing scrollYProgress={scrollYProgress} />
-        <About scroll={scrollYProgress} />
-        <Contact />
-      </div>
+      {/* <div className="scroll-container-one" ref={container}> */}
+      <AnimatePresence mode="wait">
+        {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
+      </AnimatePresence>
+      <Navbar />
+      <Sidebar />
+      <Landing scrollYProgress={scrollYProgress} />
+      <About scroll={scrollYProgress} />
+      {/* </div> */}
+      <Contact />
     </>
   );
 }
