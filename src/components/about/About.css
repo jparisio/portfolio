@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.h-view-content {
+  padding-top: 5vh;
+}
+
 .h-view-wrapper {
   position: sticky;
   top: 0;
@@ -16,23 +20,45 @@
   overflow: hidden;
   gap: 5vw;
 }
-
 .h-view-header {
-  height: 35%;
-  width: 100%;
   color: black;
-  text-align: left;
+  text-align: center;
   display: flex;
-  justify-content: left;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   font-size: 10vw;
   margin: 0;
   padding: 0;
+  height: 100%;
+  padding-bottom: 5vh;
 }
 
-.h-view-header h1 {
+.h-view-header-wrapper {
+  display: flex;
+  flex-direction: row; /* Align children horizontally */
+  align-items: flex-end; /* Align letters to the bottom */
+  margin: 0;
+  font-family: "roboto", sans-serif;
+}
+
+.about-letter-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-tiny-blurb {
+  font-size: 30px;
+  margin-left: 10px;
+  font-family: "Riccione Serial Medium", sans-serif;
   margin: 0;
   padding: 0;
+  margin-left: 10px;
+}
+
+.about-tiny-blurb p {
+  margin: 0;
 }
 
 .h-view-content {
@@ -42,20 +68,4 @@
   justify-content: center;
   margin-left: 50vw;
   /* height: 50vh; */
-}
-
-.test-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50vw;
-  height: 50vh;
-  background-color: black;
-  color: white;
-  border-radius: 20px;
-}
-
-.about-letter-wrapper {
-  display: inline-block;
-  overflow: hidden;
 }

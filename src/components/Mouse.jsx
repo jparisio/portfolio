@@ -28,7 +28,7 @@ export default function Mouse() {
 
   return (
     <motion.div
-      className="sticky-mouse"
+      className="mouse"
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
       transition={{ type: "spring" }}
       animate={{ width: size, height: size }}

@@ -1,3 +1,5 @@
+import React from "react";
+import AboutCards from "./AboutCards";
 import "./About.css";
 import {
   motion,
@@ -5,6 +7,9 @@ import {
   useTransform,
   useInView,
   easeIn,
+  animate,
+  spring,
+  delay,
 } from "framer-motion";
 import { useRef } from "react";
 
@@ -16,7 +21,7 @@ export default function About({ scroll }) {
   });
   const isInView = useInView(ref, { once: false }); // Triggers animation only once
 
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-90%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-50%"]);
   const scale = useTransform(scroll, [0, 0.25], [0.8, 1]);
   const rotate = useTransform(scroll, [0, 0.25], [-5, 0]);
 
@@ -31,13 +36,16 @@ export default function About({ scroll }) {
       <div className="h-view-wrapper ">
         <motion.div className="h-view-content" style={{ x: x }}>
           {cards.map((item, index) => (
-            <div className="test-cards" key={index}>
-              {item}
-            </div>
+            <AboutCards
+              index={index}
+              key={index}
+              item={item}
+              isInView={isInView}
+            />
           ))}
         </motion.div>
         <div className="h-view-header">
-          <h1>
+          <h1 className="h-view-header-wrapper">
             {about.split("").map((letter, index) => (
               <span className="about-letter-wrapper" key={index}>
                 <motion.span
@@ -55,6 +63,21 @@ export default function About({ scroll }) {
               </span>
             ))}
           </h1>
+          <div className="about-tiny-blurb">
+            <motion.span className="about-letter-wrapper">
+              <motion.p
+                className="about-text"
+                initial={{ y: 400 }}
+                animate={isInView ? { y: 0 } : {}}
+                transition={{
+                  ease: [0.6, 0.01, -0.5, 0.95],
+                  duration: 1,
+                }}
+              >
+                & other cool things <span className="mini-number">(1)</span>
+              </motion.p>
+            </motion.span>
+          </div>
         </div>
       </div>
     </motion.section>
