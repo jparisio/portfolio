@@ -57,3 +57,11 @@
   position: relative;
   height: 400vh;
 }
+
+.sticky-mouse {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  background-color: #da627d;
+  border-radius: 50%;
+}

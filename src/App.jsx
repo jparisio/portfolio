@@ -9,6 +9,7 @@ import Preloader from "./components/Preloader";
 import Contact from "./components/contact/Contact";
 import Sidebar from "./components/sidebar/Sidebar";
 import About from "./components/about/About";
+import Mouse from "./components/Mouse";
 import Lenis from "@studio-freight/lenis";
 
 export default function App() {
@@ -16,7 +17,6 @@ export default function App() {
   const handlePreloaderComplete = function () {
     setLoading(false);
   };
-  console.log(loading);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -42,6 +42,7 @@ export default function App() {
 
   return (
     <>
+      <Mouse />
       {/* <div className="scroll-container-one" ref={container}> */}
       <AnimatePresence mode="wait">
         {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
