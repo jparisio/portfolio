@@ -6,12 +6,21 @@
   flex-direction: row;
 }
 
-.projects-container h1 {
+.inner h1 {
   margin: 0;
   /* position: sticky;
   top: 0;
   right: 50; */
   text-align: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 50vh;
+  width: 30vw;
+  margin-left: 3vw;
+  font-size: 40vh;
+  /* position: absolute; */
 }
 
 .inner {
@@ -21,4 +30,39 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  z-index: 1;
+}
+
+.inner-1 {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-left: -100px;
+  background-color: none;
+}
+
+.inner-1 h1 {
+  margin: 0;
+  /* position: sticky;
+  top: 0;
+  right: 50; */
+  text-align: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  height: 50vh;
+  width: 30vw;
+  padding-top: 15vh;
+  font-size: 45vh;
+  color: black;
+  /* position: absolute; */
+}
+
+.projects-container {
+  height: 200vh;
+  background-color: #fefefe;
+  position: relative;
 }
