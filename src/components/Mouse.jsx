@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 export default function Mouse() {
   const mouse = { x: useMotionValue(0), y: useMotionValue(0) };
 
-  const size = 20;
+  const size = 40;
 
   const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
 

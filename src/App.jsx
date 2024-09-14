@@ -9,6 +9,7 @@ import Preloader from "./components/Preloader";
 import Contact from "./components/contact/Contact";
 import Sidebar from "./components/sidebar/Sidebar";
 import About from "./components/about/About";
+import Projects from "./components/projects/Projects";
 import Mouse from "./components/Mouse";
 import Lenis from "@studio-freight/lenis";
 
@@ -51,6 +52,7 @@ export default function App() {
       <Sidebar />
       <Landing scrollYProgress={scrollYProgress} />
       <About scroll={scrollYProgress} />
+      <Projects />
       {/* </div> */}
       <Contact />
     </>

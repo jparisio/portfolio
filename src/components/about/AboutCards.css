@@ -4,8 +4,8 @@
   justify-content: center;
   width: 50vw;
   height: 50vh;
-  background-color: black;
-  color: white;
+  outline: 2px solid black;
+  color: #fefefe;
   border-radius: 20px;
   position: relative; /* Required for absolute positioning of the effect */
   overflow: hidden; /* Hide the expanding circle overflow */
@@ -17,18 +17,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Ensure it's positioned relative for layering */
-  z-index: 1; /* Ensure it sits above the circle effect */
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "roboto", sans-serif;
+  color: black;
+}
+
+/* .test-cards-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+  z-index: 1; 
 }
 
 .circle-effect {
   position: absolute;
   border-radius: 50%;
   background-color: #da627d;
-  width: 100px; /* Set initial size */
-  height: 100px; /* Set initial size */
+  width: 100px; 
+  height: 100px; 
   transform-origin: center;
-  transition: transform 0.5s ease; /* Smooth transition for scaling */
-  pointer-events: none; /* Ensure it doesn't interfere with mouse events */
-  z-index: 0; /* Place it behind the content */
-}
+  transition: transform 0.5s ease; 
+  pointer-events: none; 
+  z-index: 0; 
+} */

@@ -71,7 +71,7 @@ export default function About({ scroll }) {
                 animate={isInView ? { y: 0 } : {}}
                 transition={{
                   ease: [0.6, 0.01, -0.5, 0.95],
-                  duration: 1,
+                  duration: 1.7,
                 }}
               >
                 & other cool things <span className="mini-number">(1)</span>
