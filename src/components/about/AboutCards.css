@@ -53,13 +53,23 @@
   padding-top: 5px;
 }
 
+@media (max-width: 1080px) {
+  .card-number h1 {
+    font-size: 6vw; /* Adjust size based on viewport width */
+  }
+
+  .cards-content {
+    font-size: 2vw; /* Adjust size of paragraph text based on viewport width */
+  }
+}
+
 @media (max-width: 768px) {
   .card-number h1 {
     font-size: 6vw; /* Adjust size based on viewport width */
   }
 
   .cards-content {
-    font-size: 2.5vw; /* Adjust size of paragraph text based on viewport width */
+    font-size: 2vw; /* Adjust size of paragraph text based on viewport width */
   }
 }
 
