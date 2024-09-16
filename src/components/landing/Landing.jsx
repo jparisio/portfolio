@@ -130,7 +130,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.2, ...transition }}
+                transition={{ delay: 1.3, ...transition }}
               >
                 by
               </motion.p>
@@ -139,7 +139,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.3, ...transition }}
+                transition={{ delay: 1.5, ...transition }}
               >
                 creativity
               </motion.p>
@@ -150,7 +150,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.5, ...transition }}
+                transition={{ delay: 1.7, ...transition }}
               >
                 & growth <span className="mini-number">(3)</span>
               </motion.p>

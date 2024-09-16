@@ -69,3 +69,8 @@
   margin-left: 50vw;
   /* height: 50vh; */
 }
+
+.letter-wrapper {
+  display: inline-block;
+  overflow: hidden;
+}

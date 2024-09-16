@@ -14,7 +14,6 @@ import {
 import { useRef } from "react";
 
 export default function About({ scroll }) {
-  const cards = ["project1", "project2", "project3"];
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -26,6 +25,22 @@ export default function About({ scroll }) {
   const rotate = useTransform(scroll, [0, 0.25], [-5, 0]);
 
   const about = "ABOUT";
+
+  const cards = [
+    {
+      name: "01.",
+      content:
+        "im a passionate/ developer who excels in/ web dev and game dev./ ive worked on my own/ commercial projects,/ and collaberated with/ others across the world",
+    },
+    {
+      name: "02.",
+      content: "i love movies and video/ games, and other fun things",
+    },
+    {
+      name: "03.",
+      content: "i play golf and snowboard,/ as well as hockey and stuff",
+    },
+  ];
 
   return (
     <motion.section
@@ -39,7 +54,7 @@ export default function About({ scroll }) {
             <AboutCards
               index={index}
               key={index}
-              item={item}
+              cardContents={item}
               isInView={isInView}
             />
           ))}

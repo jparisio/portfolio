@@ -2,45 +2,21 @@ import React, { useState, useRef } from "react";
 import { motion, spring } from "framer-motion";
 import "./AboutCards.css"; // Import your CSS file
 
-export default function AboutCards({ item, index, isInView }) {
-  //   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  //   const [hovered, setHovered] = useState(false);
-  //   const [circleSize, setCircleSize] = useState(0);
-  //   const cardRef = useRef(null);
+export default function AboutCards({ index, isInView, cardContents }) {
+  const name = cardContents.name;
+  const content = cardContents.content;
+  const initial = {
+    y: 400,
+  };
 
-  //   const handleMouseEnter = (e) => {
-  //     const { left, top, width, height } =
-  //       cardRef.current.getBoundingClientRect();
-  //     const x = ((e.clientX - left) / width) * 100;
-  //     const y = ((e.clientY - top) / height) * 100;
+  const animate = {
+    y: 0,
+  };
 
-  //     setMousePos({ x, y });
-  //     setCircleSize(15); // Grow the circle to its full size
-
-  //     // Log the calculated relative mouse position
-  //     console.log("Mouse Enter Position:", {
-  //       x: e.clientX - left,
-  //       y: e.clientY - top,
-  //     });
-  //   };
-
-  //   const handleMouseLeave = (e) => {
-  //     const { left, top, width, height } =
-  //       cardRef.current.getBoundingClientRect();
-  //     const x = ((e.clientX - left) / width) * 100;
-  //     const y = ((e.clientY - top) / height) * 100;
-
-  //     setMousePos({ x, y });
-  //     setCircleSize(0);
-
-  //     // Log the calculated relative mouse position
-  //     console.log("Mouse Enter Position:", {
-  //       x: e.clientX - left,
-  //       y: e.clientY - top,
-  //     });
-  //   };
-
-  //   console.log(hovered);
+  const transition = {
+    ease: [0.6, 0.01, -0.5, 0.95],
+    duration: 1,
+  };
 
   return (
     <motion.div
@@ -60,20 +36,46 @@ export default function AboutCards({ item, index, isInView }) {
           damping: 20, // Controls how quickly the spring settles
         },
       }}
-
-      //   onMouseEnter={handleMouseEnter}
-      //   onMouseLeave={handleMouseLeave}
-      //   ref={cardRef}
     >
-      {/* <div
-        className="circle-effect"
-        style={{
-          left: `${mousePos.x}%`,
-          top: `${mousePos.y}%`,
-          transform: `translate(-${mousePos.x}%, -${mousePos.y}%) scale(${circleSize})`,
-        }}
-      /> */}
-      <div className="test-cards-inner">{item}</div>
+      <div className="cards-inner">
+        <div className="card-number">
+          <motion.h1>
+            <span className="letter-wrapper">
+              {name.split("").map((letter, index) => (
+                <motion.span
+                  style={{ display: "inline-block" }}
+                  initial={initial}
+                  animate={isInView ? animate : {}}
+                  transition={{ delay: index * 0.15 + 0.3, ...transition }}
+                  key={index}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </span>
+          </motion.h1>
+        </div>
+        <div className="cards-content">
+          <motion.p>
+            <span className="letter-wrapper">
+              {content.split("/").map((line, index) => (
+                <span className="letter-wrapper">
+                  <motion.span
+                    className="line"
+                    style={{ display: "block" }}
+                    initial={initial}
+                    animate={isInView ? animate : {}}
+                    transition={{ delay: index * 0.1 + 0.35, ...transition }}
+                    key={index}
+                  >
+                    {line}
+                  </motion.span>
+                </span>
+              ))}
+            </span>
+          </motion.p>
+        </div>
+      </div>
     </motion.div>
   );
 }
