@@ -115,17 +115,30 @@
   font-family: "gothic light", sans-serif;
 }
 
-@media screen and (max-width: 768px) {
-  .intro h1 {
-    font-size: 5rem;
-  }
-
-  .intro h2 {
-    font-size: 1.8rem;
-  }
-}
-
 .letter-wrapper {
   display: inline-block;
   overflow: hidden;
+}
+
+/* Responsive media query for smaller screens */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 12vh; /* Adjust heading size for small screens */
+  }
+
+  .intro p {
+    font-size: 6vh;
+  }
+
+  .line-one {
+    font-size: 5vh;
+  }
+
+  .line-one .location {
+    font-size: 5vh;
+  }
+
+  .intro h1 {
+    height: 12vh;
+  }
 }
