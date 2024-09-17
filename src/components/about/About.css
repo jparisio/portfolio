@@ -1,8 +1,8 @@
 .horizontal-view-container {
   background-color: black;
-  height: 300vh;
+  min-height: 300vh;
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .h-view-content {
@@ -13,7 +13,7 @@
   position: sticky;
   top: 0;
   background-color: #fefefe;
-  height: 100vh;
+  /* height: 100vh; */
   min-height: 100vh;
   display: flex;
   align-items: center;
