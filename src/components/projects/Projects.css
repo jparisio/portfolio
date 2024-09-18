@@ -6,11 +6,8 @@
   flex-direction: row;
 }
 
-.inner h1 {
+.img-container {
   margin: 0;
-  /* position: sticky;
-  top: 0;
-  right: 50; */
   text-align: center;
   align-items: center;
   background-color: black;
@@ -19,8 +16,16 @@
   height: 50vh;
   width: 30vw;
   margin-left: 3vw;
-  font-size: 40vh;
-  /* position: absolute; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .inner {
@@ -65,4 +70,15 @@
   height: 200vh;
   background-color: #fefefe;
   position: relative;
+}
+
+.project-rotated {
+  transform-origin: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.letter-wrapper {
+  display: block;
+  overflow: hidden;
 }
