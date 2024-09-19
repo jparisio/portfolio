@@ -35,7 +35,7 @@ export default function About({ scroll }) {
     {
       name: "02.",
       content:
-        "Driven by innovation and/ fueled by passion, /I turn ideas into engaging,/ high-quality projects that/ stand out and leave a /lasting impression.",
+        "Driven by innovation/ and fueled by passion, /I turn ideas into/ engaging, high-quality/ projects that stand /out and leave a /lasting impression.",
     },
     {
       name: "03.",
