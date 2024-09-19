@@ -22,7 +22,7 @@ export default function Projects() {
   return (
     <>
       <div className="projects-intro-container">
-        <motion.div className="test-title" ref={ref}>
+        <motion.div className="test-title">
           <div>
             {"PROJECTS".split("").map((letter, index) => (
               <span className="projects-letter-wrapper" key={index}>
@@ -41,7 +41,7 @@ export default function Projects() {
               </span>
             ))}
           </div>
-          <div className="arrow-down"></div>
+          <div className="arrow-down" ref={ref}></div>
         </motion.div>
         <div className="projects-intro"></div>
         <div className="projects-intro-2"></div>
