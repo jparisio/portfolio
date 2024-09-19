@@ -34,11 +34,13 @@ export default function About({ scroll }) {
     },
     {
       name: "02.",
-      content: "i love movies and video/ games, and other fun things",
+      content:
+        "Driven by innovation and/ fueled by passion, /I turn ideas into engaging,/ high-quality projects that/ stand out and leave a /lasting impression.",
     },
     {
       name: "03.",
-      content: "i play golf and snowboard,/ as well as hockey and stuff",
+      content:
+        "Creativity is at the/ forefront of my work./ I push boundaries until/ I achieve the absolute/ best results for every /project, ensuring client /satisfaction",
     },
   ];
 

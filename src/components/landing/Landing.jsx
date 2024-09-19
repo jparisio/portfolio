@@ -17,9 +17,9 @@ export default function Landing({ scrollYProgress }) {
     return () => clearTimeout(timer);
   }, []);
 
-  const rotate = useTransform(scrollYProgress, [0, 0.5], [0, -10]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  // const rotate = useTransform(scrollYProgress, [0, 0.5], [0, -10]);
+  // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const initial = {
     y: 400,
