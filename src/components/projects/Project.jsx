@@ -27,9 +27,40 @@ export default function Project() {
         <Magnetic optionalClass={"view"}>VIEW</Magnetic>
       </Magnetic>
       <div className="project-banner">
-        <div>glsl</div>
-        <div>gml</div>
-        <div className="year">2024</div>
+        <motion.div
+          initial={{ y: 200 }}
+          animate={isInView ? { y: 0 } : {}}
+          transition={{
+            delay: 0.1,
+            duration: 1,
+            ease: [0.65, 0, 0.35, 1],
+          }}
+        >
+          glsl
+        </motion.div>
+        <motion.div
+          initial={{ y: 200 }}
+          animate={isInView ? { y: 0 } : {}}
+          transition={{
+            delay: 0.14,
+            duration: 1,
+            ease: [0.65, 0, 0.35, 1],
+          }}
+        >
+          gml
+        </motion.div>
+        <motion.div
+          className="year"
+          initial={{ y: 200 }}
+          animate={isInView ? { y: 0 } : {}}
+          transition={{
+            delay: 0.18,
+            ease: [0.65, 0, 0.35, 1],
+            duration: 1,
+          }}
+        >
+          2024
+        </motion.div>
       </div>
       <motion.div className="project-number">
         <h1 ref={ref}>
