@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div className="contact-container" id="contact">
       <h1>
-        <WavyWords>Contact</WavyWords>
+        <WavyWords moveY={-33}>Contact</WavyWords>
       </h1>
 
       <form>

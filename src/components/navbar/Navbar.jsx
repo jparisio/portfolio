@@ -20,7 +20,7 @@ export default function Navbar() {
                 about.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <WavyWords>About</WavyWords>
+              <WavyWords moveY={-25}>About</WavyWords>
             </button>
           </Magnetic>
         </li>
@@ -33,7 +33,7 @@ export default function Navbar() {
                 projects.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <WavyWords>Projects</WavyWords>
+              <WavyWords moveY={-25}>Projects</WavyWords>
             </button>
           </Magnetic>
         </li>
@@ -45,7 +45,7 @@ export default function Navbar() {
                 contact.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <WavyWords>Contact</WavyWords>
+              <WavyWords moveY={-25}>Contact</WavyWords>
             </button>
           </Magnetic>
         </li>

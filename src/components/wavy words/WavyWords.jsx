@@ -1,22 +1,23 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { useState } from "react";
 import "./WavyWords.css";
 
-export default function WavyWords({ children }) {
+export default function WavyWords({ children, moveY }) {
   const [hovering, setHovering] = useState(false);
   const initial = {
     y: 0,
   };
 
   const animate = {
-    y: hovering ? -25 : 0,
+    y: hovering ? moveY : 0,
   };
 
-  const transition = {
+  const transition = (index) => ({
     duration: 0.5,
     ease: [0.65, 0, 0.35, 1],
-  };
+    delay: 0.03 * index,
+  });
   return (
     <div
       className="wavy-words-container"
@@ -29,7 +30,7 @@ export default function WavyWords({ children }) {
             style={{ display: "inline-block" }}
             intitial={initial}
             animate={animate}
-            transition={{ delay: 0.05 * index, ...transition }}
+            transition={transition(index)}
             key={index}
           >
             {letter}
@@ -42,7 +43,7 @@ export default function WavyWords({ children }) {
             style={{ display: "inline-block" }}
             intitial={initial}
             animate={animate}
-            transition={{ delay: 0.05 * index, ...transition }}
+            transition={transition(index)}
             key={index}
           >
             {letter}
