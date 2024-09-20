@@ -20,7 +20,7 @@ export default function Project() {
   return (
     <div className="project-container">
       <motion.div className="project-image">
-        <motion.img src="/src/assets/portfolio-img2.jpg" alt="some pic" />
+        <motion.img src="/src/assets/portfolio-img3.jpg" alt="some pic" />
       </motion.div>
 
       <Magnetic optionalClass={"magnetic-hover"}>

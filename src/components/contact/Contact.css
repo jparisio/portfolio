@@ -13,7 +13,36 @@
 
 .contact-container h1 {
   color: black; /* black blue text color */
+  margin-bottom: 10px;
 }
+
+/* heres for the sliding text */
+
+.header-container {
+  overflow: hidden;
+  /* display: flex; */
+  position: relative;
+}
+
+.header-container p {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.contact-header {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-header2 {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+}
+
+/* ends here*/
 
 form {
   display: flex;
