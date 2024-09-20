@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Magnetic from "../Magnetic";
 import "./Project.css";
 export default function Project() {

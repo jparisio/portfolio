@@ -1,11 +1,8 @@
 import React from "react";
 import "./Projects.css";
-import { useScroll, useTransform, useInView } from "framer-motion";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useScroll, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import ThreeTest from "../ThreeTest";
 import Project from "./Project";
 
 export default function Projects() {
