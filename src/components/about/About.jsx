@@ -53,12 +53,7 @@ export default function About({ scroll }) {
       <div className="h-view-wrapper ">
         <motion.div className="h-view-content" style={{ x: x }}>
           {cards.map((item, index) => (
-            <AboutCards
-              index={index}
-              key={index}
-              cardContents={item}
-              isInView={isInView}
-            />
+            <AboutCards index={index} key={index} cardContents={item} />
           ))}
         </motion.div>
         <div className="h-view-header">

@@ -1,8 +1,11 @@
 import React, { useState, useRef } from "react";
-import { motion, spring } from "framer-motion";
+import { motion, spring, useInView } from "framer-motion";
 import "./AboutCards.css"; // Import your CSS file
 
-export default function AboutCards({ index, isInView, cardContents }) {
+export default function AboutCards({ index, cardContents }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false }); // Triggers animation only once
+
   const name = cardContents.name;
   const content = cardContents.content;
   const initial = {
@@ -21,6 +24,7 @@ export default function AboutCards({ index, isInView, cardContents }) {
   return (
     <motion.div
       className="test-cards"
+      ref={ref}
       key={index}
       initial={{ y: 400, opacity: 0 }}
       animate={isInView ? { y: 0, opacity: 1 } : { opacity: 0 }}

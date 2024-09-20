@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import ThreeTest from "../ThreeTest";
+import Project from "./Project";
 
 export default function Projects() {
   //this is for scroll animation
@@ -33,7 +34,7 @@ export default function Projects() {
                   transition={{
                     delay: index * 0.1,
                     ease: [0.6, 0.01, -0.5, 0.95],
-                    duration: 1,
+                    duration: 0.7,
                   }}
                 >
                   {letter}
@@ -46,7 +47,9 @@ export default function Projects() {
         <div className="projects-intro"></div>
         <div className="projects-intro-2"></div>
       </div>
-      <div className="projects-main"></div>
+      <div className="projects-main">
+        <Project />
+      </div>
     </>
   );
 }

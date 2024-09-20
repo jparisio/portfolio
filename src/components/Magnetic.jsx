@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Magnetic({ children }) {
+export default function Magnetic({ children, optionalClass = "" }) {
   function onMouseMove(e) {
     const { clientX, clientY } = e;
     const { left, top, width, height } = magRef.current.getBoundingClientRect();
@@ -18,6 +18,7 @@ export default function Magnetic({ children }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   return (
     <motion.div
+      className={optionalClass}
       ref={magRef}
       animate={{ x: position.x * 0.5, y: position.y * 0.5 }}
       onMouseMove={onMouseMove}

@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <>
-      <Mouse />
+      {/* <Mouse /> */}
       {/* <div className="scroll-container-one" ref={container}> */}
       <AnimatePresence mode="wait">
         {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
