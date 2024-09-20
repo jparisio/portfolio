@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import ThreeTest from "../ThreeTest";
 import Project from "./Project";
 
-export default function Projects() {
+export default function Projects({ projectsRef }) {
   //this is for scroll animation
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -22,7 +22,7 @@ export default function Projects() {
 
   return (
     <>
-      <div className="projects-intro-container">
+      <div className="projects-intro-container" ref={projectsRef}>
         <motion.div className="test-title">
           <div>
             {"PROJECTS".split("").map((letter, index) => (

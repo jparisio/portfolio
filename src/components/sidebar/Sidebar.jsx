@@ -6,7 +6,7 @@ import Link from "./Link";
 import "./Sidebar.css";
 import Magnetic from "../Magnetic";
 
-export default function Sidebar() {
+export default function Sidebar({ projectsRef, aboutRef }) {
   const [active, setActive] = useState(false);
   //use framer motion to change the scale of burger once we have scrolled to 100vh
   const burger = useRef(null);
@@ -70,7 +70,12 @@ export default function Sidebar() {
           >
             <div className="body">
               {items.map((item, index) => (
-                <Link data={item} index={index} />
+                <Link
+                  data={item}
+                  index={index}
+                  projectsRef={projectsRef}
+                  aboutRef={aboutRef}
+                />
               ))}
             </div>
           </motion.div>
