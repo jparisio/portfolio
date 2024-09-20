@@ -1,8 +1,11 @@
 import "./Navbar.css";
 import Magnetic from "../Magnetic";
 import { motion } from "framer-motion";
-
+import { useState } from "react";
+import WavyWords from "../wavy words/WavyWords";
 export default function Navbar() {
+  const [hovering, setHovering] = useState(false);
+
   return (
     <div className="header">
       <motion.div className="logo" whileHover={{ scale: 1.2 }}>
@@ -17,7 +20,7 @@ export default function Navbar() {
                 about.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              About
+              <WavyWords>About</WavyWords>
             </button>
           </Magnetic>
         </li>
@@ -30,7 +33,7 @@ export default function Navbar() {
                 projects.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Projects
+              <WavyWords>Projects</WavyWords>
             </button>
           </Magnetic>
         </li>
@@ -42,7 +45,7 @@ export default function Navbar() {
                 contact.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Contact
+              <WavyWords>Contact</WavyWords>
             </button>
           </Magnetic>
         </li>

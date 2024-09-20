@@ -18,24 +18,24 @@
 
 /* heres for the sliding text */
 
-.header-container {
+.wavy-words-container {
   overflow: hidden;
   /* display: flex; */
   position: relative;
 }
 
-.header-container p {
+.wavy-words-container p {
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
 
-.contact-header {
+.wavy-words1 {
   margin: 0;
   padding: 0;
 }
 
-.contact-header2 {
+.wavy-words2 {
   margin: 0;
   padding: 0;
   position: absolute;
