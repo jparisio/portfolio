@@ -1,7 +1,7 @@
 import "./Contact.css";
 export default function Contact() {
   return (
-    <div className="contact-container">
+    <div className="contact-container" id="contact">
       <h1>Lets get in Touch</h1>
       <form>
         <label htmlFor="name">Name:</label>

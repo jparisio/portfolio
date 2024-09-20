@@ -19,9 +19,6 @@ export default function App() {
     setLoading(false);
   };
 
-  const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
-
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -51,11 +48,11 @@ export default function App() {
       <AnimatePresence mode="wait">
         {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
       </AnimatePresence>
-      <Navbar projectsRef={projectsRef} aboutRef={aboutRef} />
-      <Sidebar projectsRef={projectsRef} aboutRef={aboutRef} />
+      <Navbar />
+      <Sidebar />
       <Landing scrollYProgress={scrollYProgress} />
-      <About scroll={scrollYProgress} aboutRef={aboutRef} />
-      <Projects projectsRef={projectsRef} />
+      <About scroll={scrollYProgress} />
+      <Projects />
       {/* </div> */}
       <Contact />
     </>

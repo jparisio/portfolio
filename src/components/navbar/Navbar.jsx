@@ -2,7 +2,7 @@ import "./Navbar.css";
 import Magnetic from "../Magnetic";
 import { motion } from "framer-motion";
 
-export default function Navbar({ projectsRef, aboutRef }) {
+export default function Navbar() {
   return (
     <div className="header">
       <motion.div className="logo" whileHover={{ scale: 1.2 }}>
@@ -13,7 +13,8 @@ export default function Navbar({ projectsRef, aboutRef }) {
           <Magnetic>
             <button
               onClick={() => {
-                aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+                const about = document.getElementById("about");
+                about.scrollIntoView({ behavior: "smooth" });
               }}
             >
               About
@@ -25,7 +26,8 @@ export default function Navbar({ projectsRef, aboutRef }) {
             <button
               // href="/projects"
               onClick={() => {
-                projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+                const projects = document.getElementById("projects");
+                projects.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Projects
@@ -34,7 +36,14 @@ export default function Navbar({ projectsRef, aboutRef }) {
         </li>
         <li>
           <Magnetic>
-            <button>Contact</button>
+            <button
+              onClick={() => {
+                const contact = document.getElementById("contact");
+                contact.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Contact
+            </button>
           </Magnetic>
         </li>
       </div>

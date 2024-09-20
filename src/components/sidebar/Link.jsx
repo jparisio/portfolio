@@ -1,12 +1,11 @@
 import Magnetic from "../Magnetic";
 import { motion } from "framer-motion";
-export default function Link({ data, index, projectsRef, aboutRef }) {
+export default function Link({ data, index }) {
   const calculateDuration = (index) => {
     return 0.8 + index * 0.1;
   };
 
-  const title = data.title;
-  const ref = data.title === "Projects" ? projectsRef : aboutRef;
+  const scrollTo = data.title.toLowerCase();
 
   return (
     <Magnetic>
@@ -17,7 +16,8 @@ export default function Link({ data, index, projectsRef, aboutRef }) {
         whileHover={{ scale: 1.1 }}
         className="link"
         onClick={() => {
-          ref.current?.scrollIntoView({ behavior: "smooth" });
+          const ref = document.getElementById(scrollTo);
+          ref.scrollIntoView({ behavior: "smooth" });
         }}
       >
         {data.title}

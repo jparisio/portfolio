@@ -13,7 +13,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-export default function About({ scroll, aboutRef }) {
+export default function About({ scroll }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -48,9 +48,10 @@ export default function About({ scroll, aboutRef }) {
     <motion.section
       className="horizontal-view-container"
       ref={ref}
+      id="about"
       // style={{ scale, rotate }}
     >
-      <div className="h-view-wrapper " ref={aboutRef}>
+      <div className="h-view-wrapper ">
         <motion.div className="h-view-content" style={{ x: x }}>
           {cards.map((item, index) => (
             <AboutCards index={index} key={index} cardContents={item} />
