@@ -10,7 +10,7 @@ export default function Project({
   img,
   link,
   video,
-  key,
+  frameworks,
 }) {
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState({
@@ -81,7 +81,7 @@ export default function Project({
                 ease: [0.65, 0, 0.35, 1],
               }}
             >
-              glsl
+              {frameworks[0]}
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -92,7 +92,7 @@ export default function Project({
                 ease: [0.65, 0, 0.35, 1],
               }}
             >
-              gml
+              {frameworks[1]}
             </motion.div>
             <motion.div
               className="year"
@@ -104,7 +104,7 @@ export default function Project({
                 duration: 1,
               }}
             >
-              2024
+              {frameworks[2]}
             </motion.div>
           </div>
         </motion.div>

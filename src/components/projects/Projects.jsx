@@ -26,6 +26,7 @@ export default function Projects() {
       img: "/portfolio-img4.jpg",
       link: "https://www.youtube.com/watch?v=RECMi7wROhg",
       video: "/game.mp4",
+      frameworks: ["gml", "hlsl", "2024"],
     },
     {
       title: "FILMDLE",
@@ -35,6 +36,7 @@ export default function Projects() {
       img: "/portfolio-img3.jpg",
       link: "https://filmdlegame.com",
       video: "/filmdle.mp4",
+      frameworks: ["react", "framer", "2024"],
     },
   ];
 
