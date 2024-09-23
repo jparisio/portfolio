@@ -24,6 +24,12 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .test-title {
+    font-size: 10vw;
+  }
+}
+
 .projects-letter-wrapper {
   display: inline-block;
   overflow: hidden;
