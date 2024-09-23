@@ -25,8 +25,8 @@ export default function Project() {
           <video src="/game.mp4" loop autoPlay muted playsinline></video>
           <div className="project-banner">
             <motion.div
-              initial={{ y: 200 }}
-              animate={isInView ? { y: 0 } : {}}
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 100 } : {}}
               transition={{
                 delay: 0.1,
                 duration: 1,
@@ -36,8 +36,8 @@ export default function Project() {
               glsl
             </motion.div>
             <motion.div
-              initial={{ y: 200 }}
-              animate={isInView ? { y: 0 } : {}}
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 100 } : {}}
               transition={{
                 delay: 0.14,
                 duration: 1,
@@ -48,8 +48,8 @@ export default function Project() {
             </motion.div>
             <motion.div
               className="year"
-              initial={{ y: 200 }}
-              animate={isInView ? { y: 0 } : {}}
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 100 } : {}}
               transition={{
                 delay: 0.18,
                 ease: [0.65, 0, 0.35, 1],
