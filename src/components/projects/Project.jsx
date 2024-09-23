@@ -3,7 +3,15 @@ import { useRef, useState } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Magnetic from "../Magnetic";
 import "./Project.css";
-export default function Project() {
+export default function Project({
+  title,
+  number,
+  description,
+  img,
+  link,
+  video,
+  key,
+}) {
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState({
     x: useMotionValue(0),
@@ -12,8 +20,8 @@ export default function Project() {
   const scale = hovering ? 80 : 0;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Triggers animation only once
-  const content =
-    "A game maker project that I have been working on /for a little over a year now. Ive collaberated with people /across the world in order to bring this project to/ life. Includes high quality pixel art, fluid animations, /smooth gameplay and tight movement";
+  // const content =
+  //   "A game maker project that I have been working on /for a little over a year now. Ive collaberated with people /across the world in order to bring this project to/ life. Includes high quality pixel art, fluid animations, /smooth gameplay and tight movement";
 
   const handleMouseMove = (e) => {
     const videoRect = e.target.getBoundingClientRect();
@@ -45,11 +53,9 @@ export default function Project() {
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
           onMouseMove={handleMouseMove}
-          onClick={() =>
-            window.open("https://www.youtube.com/watch?v=RECMi7wROhg", "_blank")
-          }
+          onClick={() => window.open(link, "_blank")}
         >
-          <motion.img src="/portfolio-img3.jpg" alt="some pic" />
+          <motion.img src={img} alt="some pic" />
           <motion.div
             className="moving-clicker"
             style={{
@@ -64,7 +70,7 @@ export default function Project() {
             {hovering ? "VIEW" : ""}
           </motion.div>
 
-          <video src="/game.mp4" loop autoPlay muted playsinline></video>
+          <video src={video} loop autoPlay muted playsinline></video>
           <div className="project-banner">
             <motion.div
               initial={{ opacity: 0 }}
@@ -110,7 +116,7 @@ export default function Project() {
 
       <motion.div className="project-number">
         <h1 ref={ref}>
-          {"01".split("").map((letter, index) => (
+          {number.split("").map((letter, index) => (
             <span className="number-wrapper" key={index}>
               <motion.span
                 style={{ display: "inline-block" }}
@@ -130,7 +136,7 @@ export default function Project() {
       </motion.div>
       <div className="project-description">
         <motion.h1>
-          {"GAME DEMO".split(" ").map((word, index) => (
+          {title.split(" ").map((word, index) => (
             <span className="number-wrapper" key={index}>
               <motion.span
                 style={{ display: "inline-block" }}
@@ -150,7 +156,7 @@ export default function Project() {
         </motion.h1>
         <motion.p>
           <span className="number-wrapper">
-            {content.split("/").map((line, index) => (
+            {description.split("/").map((line, index) => (
               <span className="number-wrapper">
                 <motion.span
                   className="line-wrapper"

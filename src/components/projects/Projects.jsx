@@ -17,6 +17,27 @@ export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Triggers animation only once
 
+  const projects = [
+    {
+      title: "GAME DEMO",
+      number: "01",
+      description:
+        "A game maker project that I have been working on for a little over a year now. Ive collaberated with people across the world in order to bring this project to life. Includes high quality pixel art, fluid animations, smooth gameplay and tight movement",
+      img: "/portfolio-img4.jpg",
+      link: "https://www.youtube.com/watch?v=RECMi7wROhg",
+      video: "/game.mp4",
+    },
+    {
+      title: "FILMDLE",
+      number: "02",
+      description:
+        "A word guessing game inspired by the likes of wordle.  Guess the film based on 3 stills from the movie.  One attempt per day, and a new film every day.  Can you guess them all?",
+      img: "/portfolio-img3.jpg",
+      link: "https://filmdlegame.com",
+      video: "",
+    },
+  ];
+
   return (
     <>
       <div className="projects-intro-container" id="projects">
@@ -45,7 +66,9 @@ export default function Projects() {
         <div className="projects-intro-2"></div>
       </div>
       <div className="projects-main">
-        <Project />
+        {projects.map((project, index) => (
+          <Project {...project} key={index} />
+        ))}
       </div>
     </>
   );
