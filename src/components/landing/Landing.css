@@ -4,6 +4,7 @@
   justify-content: center;
   background-color: #fefefe;
   min-height: 100vh;
+  max-width: 100%;
 }
 
 .intro {

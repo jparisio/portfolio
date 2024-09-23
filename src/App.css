@@ -23,14 +23,14 @@
   color: #d3d9d4;
 }
 
-.contact-container {
+/* .contact-container {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-}
+} */
 
 .no-scroll {
   overflow: hidden;

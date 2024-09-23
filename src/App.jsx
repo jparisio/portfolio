@@ -45,14 +45,14 @@ export default function App() {
     <>
       {/* <Mouse /> */}
       {/* <div className="scroll-container-one" ref={container}> */}
-      <AnimatePresence mode="wait">
-        {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
-      </AnimatePresence>
+      {/* <AnimatePresence mode="wait"> */}
+      {/* {loading && <Preloader setLoading={handlePreloaderComplete} />} */}
+      {/* </AnimatePresence> */}
       <Navbar />
       <Sidebar />
       <Landing scrollYProgress={scrollYProgress} />
       <About scroll={scrollYProgress} />
-      {/* <Projects /> */}
+      <Projects />
       {/* </div> */}
       <Contact />
     </>
