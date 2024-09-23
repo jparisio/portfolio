@@ -68,7 +68,7 @@ export default function Project() {
 
       <motion.div className="project-number">
         <h1 ref={ref}>
-          {"01.".split("").map((letter, index) => (
+          {"01".split("").map((letter, index) => (
             <span className="number-wrapper" key={index}>
               <motion.span
                 style={{ display: "inline-block" }}
