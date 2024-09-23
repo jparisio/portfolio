@@ -1,7 +1,7 @@
 .burger-menu {
   /* mix-blend-mode: difference; */
   position: fixed;
-  right: 30px;
+  right: 3%;
   background-color: white;
   height: 60px;
   width: 60px;
