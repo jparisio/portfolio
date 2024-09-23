@@ -26,6 +26,12 @@
   transition: 0.2s ease;
 }
 
+@media only screen and (max-width: 767px) {
+  .burger-menu {
+    right: 10%;
+  }
+}
+
 .burger-menu.clicked::before {
   transform: translateY(3.5px) rotate(-45deg) scaleX(0.8);
 }
