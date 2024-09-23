@@ -68,7 +68,7 @@
   justify-content: flex-end;
   gap: 10px;
   width: 100%;
-  height: 5%;
+  height: 40px;
   margin-top: 5px;
   pointer-events: none;
 }
@@ -141,7 +141,7 @@
 
   .project-banner {
     width: 100%;
-    height: 3%;
+    height: 40px;
   }
 
   .project-banner div {
