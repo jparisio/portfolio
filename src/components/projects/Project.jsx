@@ -21,7 +21,8 @@ export default function Project() {
     <div className="project-container">
       <motion.div className="project-image">
         <div className="image-content">
-          <motion.img src="/src/assets/portfolio-img3.jpg" alt="some pic" />
+          <motion.img src="/portfolio-img3.jpg" alt="some pic" />
+          <video src="/game.mp4" loop autoPlay muted></video>
           <div className="project-banner">
             <motion.div
               initial={{ y: 200 }}
