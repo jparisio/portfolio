@@ -81,4 +81,10 @@
   .cards-content {
     font-size: 2vw;
   }
+
+  .cards-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
