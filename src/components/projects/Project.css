@@ -140,6 +140,7 @@
   .project-description {
     grid-area: 3 / 1 / 4 / 2; /* Below the number */
     padding: 10px; /* Add some padding for mobile */
+    font-size: 15px;
   }
 
   .project-banner {
