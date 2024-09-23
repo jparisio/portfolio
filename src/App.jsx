@@ -52,7 +52,7 @@ export default function App() {
       <Sidebar />
       <Landing scrollYProgress={scrollYProgress} />
       <About scroll={scrollYProgress} />
-      <Projects />
+      {/* <Projects /> */}
       {/* </div> */}
       <Contact />
     </>
