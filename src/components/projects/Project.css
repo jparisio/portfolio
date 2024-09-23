@@ -101,27 +101,6 @@
   text-align: left;
 }
 
-.magnetic-hover {
-  background-color: #212121;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #dedede;
-  font-weight: bold;
-  height: 130%;
-  width: 100%;
-}
-
-.view {
-  height: 130%;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-
 @media (max-width: 950px) {
   .project-container {
     grid-template-columns: 1fr; /* Single column layout */

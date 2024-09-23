@@ -1,5 +1,6 @@
 import Magnetic from "../Magnetic";
 import { motion } from "framer-motion";
+import WavyWords from "../wavy words/WavyWords";
 export default function Link({ data, index }) {
   const calculateDuration = (index) => {
     return 0.8 + index * 0.1;
@@ -20,7 +21,7 @@ export default function Link({ data, index }) {
           ref.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        {data.title}
+        <WavyWords moveY={-33.5}>{data.title}</WavyWords>
       </motion.h1>
     </Magnetic>
   );

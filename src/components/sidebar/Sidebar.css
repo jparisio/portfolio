@@ -90,6 +90,8 @@
   transform: scale(0);
   transform-origin: center;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  left: -50px;
+  top: 10%;
 }
 
 .link:hover:after {

@@ -7,14 +7,14 @@
   height: 100vh;
   margin: auto;
   padding: 20px;
-  background-color: #f8f8f8; /* Off-white background */
+  background-color: #fefefe; /* Off-white background */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .magnetic-circle {
   position: relative;
-  width: 250px; /* Adjust size as needed */
+  width: 200px; /* Adjust size as needed */
   height: 200px;
   border-radius: 50%;
   background-color: transparent;
@@ -24,6 +24,51 @@
   font-family: "gothic light", sans-serif;
   font-size: 1rem;
   color: #fefefe; /* White text color */
+  cursor: pointer;
+}
+
+.magnetic-hover {
+  position: relative;
+  background-color: #212121;
+  border-radius: 50%; /* Ensures it's a perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dedede;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden; /* Ensures the fill stays inside the circle */
+}
+
+.magnetic-hover::before {
+  content: "";
+  position: absolute;
+  bottom: -100%; /* Start fully below the div */
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #023e8a;
+  border-radius: 50%; /* Ensure the fill also takes the circle shape */
+  transition: bottom 0.5s ease; /* Smooth transition */
+}
+
+.magnetic-hover:hover::before {
+  bottom: 0; /* Move the white fill to fully cover the circle */
+}
+
+.magnetic-hover:hover {
+  color: #212121; /* Change text color to match the original background on hover */
+}
+
+.view {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
 }
 
