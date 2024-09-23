@@ -34,7 +34,7 @@ export default function Projects() {
         "A word guessing game inspired by the likes of wordle.  Guess the film based on 3 stills from the movie.  One attempt per day, and a new film every day.  Can you guess them all?",
       img: "/portfolio-img3.jpg",
       link: "https://filmdlegame.com",
-      video: "",
+      video: "/filmdle.mp4",
     },
   ];
 

@@ -4,7 +4,7 @@
   grid-template-rows: repeat(12, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  min-height: auto;
+  min-height: 100vh;
   color: #dedede;
   padding: 10px;
   max-width: 100%;
