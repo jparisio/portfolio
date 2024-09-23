@@ -7,7 +7,7 @@ export default function Project() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Triggers animation only once
   const content =
-    "A game maker project that I have been working on for a /little over a year now. Ive collaberated with people /across the world in order to bring this project to/ life. Includes high quality pixel art, fluid animations, /smooth gameplay and tight movement";
+    "A game maker project that I have been working on /for a little over a year now. Ive collaberated with people /across the world in order to bring this project to/ life. Includes high quality pixel art, fluid animations, /smooth gameplay and tight movement";
   //   const container = useRef(null);
   //   const { scrollYProgress } = useScroll({
   //     target: container,
