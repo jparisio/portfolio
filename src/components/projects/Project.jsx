@@ -111,6 +111,7 @@ export default function Project() {
             {content.split("/").map((line, index) => (
               <span className="number-wrapper">
                 <motion.span
+                  className="line-wrapper"
                   style={{ display: "inline-block" }}
                   initial={{ y: 400 }}
                   animate={isInView ? { y: 0 } : {}}
