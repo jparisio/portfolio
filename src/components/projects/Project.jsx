@@ -20,48 +20,51 @@ export default function Project() {
   return (
     <div className="project-container">
       <motion.div className="project-image">
-        <motion.img src="/portfolio-img3.jpg" alt="some pic" />
+        <div className="image-content">
+          <motion.img src="/src/assets/portfolio-img3.jpg" alt="some pic" />
+          <div className="project-banner">
+            <motion.div
+              initial={{ y: 200 }}
+              animate={isInView ? { y: 0 } : {}}
+              transition={{
+                delay: 0.1,
+                duration: 1,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+            >
+              glsl
+            </motion.div>
+            <motion.div
+              initial={{ y: 200 }}
+              animate={isInView ? { y: 0 } : {}}
+              transition={{
+                delay: 0.14,
+                duration: 1,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+            >
+              gml
+            </motion.div>
+            <motion.div
+              className="year"
+              initial={{ y: 200 }}
+              animate={isInView ? { y: 0 } : {}}
+              transition={{
+                delay: 0.18,
+                ease: [0.65, 0, 0.35, 1],
+                duration: 1,
+              }}
+            >
+              2024
+            </motion.div>
+          </div>
+        </div>
       </motion.div>
 
-      <Magnetic optionalClass={"magnetic-hover"}>
+      {/* <Magnetic optionalClass={"magnetic-hover"}>
         <Magnetic optionalClass={"view"}>VIEW</Magnetic>
-      </Magnetic>
-      <div className="project-banner">
-        <motion.div
-          initial={{ y: 200 }}
-          animate={isInView ? { y: 0 } : {}}
-          transition={{
-            delay: 0.1,
-            duration: 1,
-            ease: [0.65, 0, 0.35, 1],
-          }}
-        >
-          glsl
-        </motion.div>
-        <motion.div
-          initial={{ y: 200 }}
-          animate={isInView ? { y: 0 } : {}}
-          transition={{
-            delay: 0.14,
-            duration: 1,
-            ease: [0.65, 0, 0.35, 1],
-          }}
-        >
-          gml
-        </motion.div>
-        <motion.div
-          className="year"
-          initial={{ y: 200 }}
-          animate={isInView ? { y: 0 } : {}}
-          transition={{
-            delay: 0.18,
-            ease: [0.65, 0, 0.35, 1],
-            duration: 1,
-          }}
-        >
-          2024
-        </motion.div>
-      </div>
+      </Magnetic> */}
+
       <motion.div className="project-number">
         <h1 ref={ref}>
           {"01.".split("").map((letter, index) => (
