@@ -33,9 +33,6 @@ export default function Project({
     stiffness: 200, // Higher stiffness for a snappier feel
     damping: 12, // Lower damping for a bouncier effect
     mass: 0.5, // A lighter mass for quicker reactions
-    bounce: 0.25, // Some bounce effect
-    restSpeed: 0.01, // Ensure the spring settles nicely
-    restDelta: 0.01, // Snaps to target smoothly};
   };
 
   const smoothMouse = {

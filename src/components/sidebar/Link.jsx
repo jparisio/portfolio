@@ -14,7 +14,7 @@ export default function Link({ data, index }) {
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         transition={{ duration: calculateDuration(index), ease: "easeInOut" }}
-        whileHover={{ scale: 1.1 }}
+        // whileHover={{ scale: 1.1 }}
         className="link"
         onClick={() => {
           const ref = document.getElementById(scrollTo);

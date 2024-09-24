@@ -75,6 +75,7 @@
 .link {
   position: relative;
   /* Add other styles for your link as needed */
+  /* font-size: 2rem; */
 }
 
 .link:after {
