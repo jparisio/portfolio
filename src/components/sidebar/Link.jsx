@@ -21,7 +21,7 @@ export default function Link({ data, index }) {
           ref.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        <WavyWords moveY={-33.5}>{data.title}</WavyWords>
+        <WavyWords>{data.title}</WavyWords>
       </motion.h1>
     </Magnetic>
   );

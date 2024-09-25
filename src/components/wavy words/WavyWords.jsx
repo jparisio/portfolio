@@ -1,17 +1,27 @@
 import React from "react";
 import { delay, motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./WavyWords.css";
 
-export default function WavyWords({ children, moveY }) {
+export default function WavyWords({ children }) {
   const [hovering, setHovering] = useState(false);
+  const [fontHeight, setFontHeight] = useState(0);
+  const firstCharRef = useRef(null);
   const initial = {
     y: 0,
   };
 
   const animate = {
-    y: hovering ? moveY : 0,
+    y: hovering ? -fontHeight : 0,
   };
+
+  // Measure the height of the first character
+  useEffect(() => {
+    if (firstCharRef.current) {
+      const { height } = firstCharRef.current.getBoundingClientRect();
+      setFontHeight(height);
+    }
+  }, [children]);
 
   const transition = (index) => ({
     duration: 0.5,
@@ -27,6 +37,7 @@ export default function WavyWords({ children, moveY }) {
       <motion.p className="wavy-words1">
         {children.split("").map((letter, index) => (
           <motion.p
+            ref={index === 0 ? firstCharRef : null} // Only reference the first letter
             style={{ display: "inline-block" }}
             intitial={initial}
             animate={animate}
@@ -40,6 +51,7 @@ export default function WavyWords({ children, moveY }) {
       <motion.p className="wavy-words2">
         {children.split("").map((letter, index) => (
           <motion.p
+            ref={index === 0 ? firstCharRef : null} // Only reference the first letter
             style={{ display: "inline-block" }}
             intitial={initial}
             animate={animate}
