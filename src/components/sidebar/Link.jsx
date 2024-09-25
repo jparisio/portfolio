@@ -6,7 +6,7 @@ export default function Link({ data, index }) {
     return 0.8 + index * 0.1;
   };
 
-  const scrollTo = data.title.toLowerCase();
+  const scrollTo = data.id;
 
   return (
     <Magnetic>

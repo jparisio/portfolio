@@ -112,7 +112,7 @@ export default function Project({
       </Magnetic> */}
 
       <motion.div className="project-number">
-        <h1 ref={ref}>
+        <h1>
           {number.split("").map((letter, index) => (
             <span className="number-wrapper" key={index}>
               <motion.span
@@ -131,7 +131,7 @@ export default function Project({
           ))}
         </h1>
       </motion.div>
-      <div className="project-description">
+      <div className="project-description" ref={ref}>
         <motion.h1>
           {title.split(" ").map((word, index) => (
             <span className="number-wrapper" key={index}>

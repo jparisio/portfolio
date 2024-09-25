@@ -44,9 +44,9 @@ export default function Sidebar({ projectsRef, aboutRef }) {
   }, []);
 
   const items = [
-    { title: "About", href: "/about" },
-    { title: "Projects", href: "/projects" },
-    { title: "Contact", href: "/contact" },
+    { title: "About", id: "about" },
+    { title: "Projects", id: "projects" },
+    { title: "Contact", id: "contact" },
   ];
 
   return (
