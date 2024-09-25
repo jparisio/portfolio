@@ -30,7 +30,7 @@ export default function About({ scroll }) {
     {
       name: "01.",
       content:
-        "im a passionate/ developer who excels in/ web dev and game dev./ ive worked on my own/ commercial projects,/ and collaberated with/ others across the world",
+        "Im a passionate/ developer who excels in/ web dev and game dev./ Ive worked on my own/ commercial projects,/ and collaberated with/ others across the world",
     },
     {
       name: "02.",
