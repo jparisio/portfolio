@@ -62,17 +62,18 @@ export default function AboutCards({ index, cardContents }) {
         <div className="cards-content">
           <motion.p>
             <span className="letter-wrapper">
-              {content.split("/").map((line, index) => (
+              {content.split(" ").map((line, index) => (
                 <span className="letter-wrapper">
                   <motion.span
                     className="line"
                     style={{ display: "block" }}
                     initial={initial}
                     animate={isInView ? animate : {}}
-                    transition={{ delay: index * 0.1 + 0.35, ...transition }}
+                    transition={{ delay: index * 0.01 + 0.35, ...transition }}
                     key={index}
                   >
                     {line}
+                    &nbsp;
                   </motion.span>
                 </span>
               ))}
