@@ -8,6 +8,10 @@
   color: #dedede;
   padding: 10px;
   max-width: 100%;
+  /* background-color: #212121;
+  position: sticky;
+  top: -15%; 
+  border-radius: 20px; */
 }
 
 .project-image {

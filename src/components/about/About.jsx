@@ -30,7 +30,7 @@ export default function About({ scroll }) {
     {
       name: "01.",
       content:
-        "Im a passionate developer who excels in web dev and game dev. Ive worked on my own commercial projects, and collaberated with others across the world",
+        "Im a passionate developer who excels in web dev and game dev. Ive worked on my own commercial projects, and collaberated with others across the world.",
     },
     {
       name: "02.",
@@ -40,7 +40,7 @@ export default function About({ scroll }) {
     {
       name: "03.",
       content:
-        "Creativity is at the forefront of my work. I push boundaries until I achieve the absolute best results for every project, ensuring client satisfaction",
+        "Creativity is at the forefront of my work. I push boundaries until I achieve the absolute best results for every project, ensuring client satisfaction.",
     },
   ];
 
