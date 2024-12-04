@@ -43,7 +43,7 @@ function SceneContent({ amplitude, waveLength }) {
     <mesh scale={[5, 5, 1]}>
       {" "}
       {/* Scale the plane geometry */}
-      <planeGeometry args={[1, 1, 50, 50]} />
+      <planeGeometry args={[1, 1, 15, 15]} />
       <shaderMaterial
         ref={materialRef}
         wireframe={false}
