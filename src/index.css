@@ -6,6 +6,7 @@ body {
   width: 100vw;
   max-width: 100%;
   /* min-height: 600px; */
+  /* min-width: 600px; */
   overflow-x: hidden;
   /* cursor: pointer; */
 }

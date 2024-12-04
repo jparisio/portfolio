@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import WavyWords from "../wavy words/WavyWords";
 import Magnetic from "../Magnetic";
+import Scene from "../Scene";
 export default function Contact() {
   return (
     <div className="contact-container" id="contact">

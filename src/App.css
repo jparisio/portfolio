@@ -57,3 +57,40 @@
   border-radius: 50%;
   z-index: 2;
 }
+
+/* this stuff is for the shader, move it later */
+.shader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.shader {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fefefe;
+}
+
+.contact-header {
+  text-align: center;
+}
+
+.bobbing-triangle {
+  margin-top: 1rem; /* Space between text and triangle */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid black; /* Black triangle */
+  animation: bobbing 1s infinite ease-in-out;
+}
+
+@keyframes bobbing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}

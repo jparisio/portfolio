@@ -11,6 +11,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Mouse from "./components/Mouse";
+import Scene from "./components/Scene";
 import Lenis from "@studio-freight/lenis";
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
       <About scroll={scrollYProgress} />
       <Projects />
       {/* </div> */}
+      <Scene />
       <Contact />
     </>
   );
