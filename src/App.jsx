@@ -55,7 +55,7 @@ export default function App() {
       <About scroll={scrollYProgress} />
       <Projects />
       {/* </div> */}
-      <Scene />
+      {/* <Scene /> */}
       <Contact />
     </>
   );
