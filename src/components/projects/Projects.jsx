@@ -24,7 +24,7 @@ export default function Projects() {
       description:
         "A game maker project that I have been working on for a little over a year now. Ive collaberated with people across the world in order to bring this project to life. Includes high quality pixel art, fluid animations, smooth gameplay and tight movement",
       img: "/portfolio-img4.jpg",
-      link: "https://www.youtube.com/watch?v=RECMi7wROhg",
+      link: "https://www.youtube.com/watch?v=ndpQz5A-CuQ",
       video: "/game.mp4",
       frameworks: ["gml", "hlsl", "2024"],
     },
