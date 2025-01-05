@@ -38,6 +38,16 @@ export default function Projects() {
       video: "/filmdle.mp4",
       frameworks: ["react", "framer", "2024"],
     },
+    {
+      title: "Luxury Roofing",
+      number: "03",
+      description:
+        "A premium website I created for DIT Canada, designed to showcase an upscale experience for businesses seeking to purchase high-end, custom websites.",
+      img: "/portfolio-img5.jpg",
+      link: "https://roofing-website-test.netlify.app",
+      video: "/filmdle.mp4",
+      frameworks: ["react", "framer", "2025"],
+    },
   ];
 
   return (
