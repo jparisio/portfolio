@@ -63,6 +63,7 @@
   border-right: 20px solid transparent;
   border-top: 30px solid;
   animation: bounce 1s infinite;
+  margin-bottom: 50px;
 }
 
 @keyframes bounce {
