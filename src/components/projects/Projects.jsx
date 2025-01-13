@@ -81,6 +81,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Project {...project} key={index} />
         ))}
+        <div className="spacer"></div>
       </div>
     </>
   );

@@ -1,10 +1,8 @@
 .project-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(
-    10,
-    auto
-  ); /* Adjusted to 10 rows with automatic height */
+  grid-template-rows: 100px auto auto auto auto auto auto auto auto auto; /* Example with the first row fixed */
+
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   color: #dedede;
