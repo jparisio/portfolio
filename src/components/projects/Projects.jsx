@@ -186,7 +186,7 @@ export default function Projects() {
               <motion.div
                 className="text-slider"
                 animate={{ y: -currentIndex * textHeight }}
-                transition={{ type: "tween", duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
               >
                 {projects.map((project, index) => (
                   <div
