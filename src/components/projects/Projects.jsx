@@ -126,7 +126,7 @@ export default function Projects() {
       </div> */}
 
       {/* A tall scroll wrapper that controls page scroll */}
-      <div ref={scrollWrapperRef} className="scroll-wrapper">
+      <div ref={scrollWrapperRef} className="scroll-wrapper" id="projects">
         {/* Left images scroll naturally with the page */}
         <div className="left-scroll">
           {projects.map((project) => (
@@ -201,6 +201,18 @@ export default function Projects() {
                 ))}
               </motion.div>
             </div>
+          </div>
+          <div className="frameworks">
+            {currentProject.frameworks.map((framework, index) => (
+              <div
+                key={index}
+                className={
+                  index === currentProject.frameworks.length - 1 ? "year" : ""
+                }
+              >
+                {framework}
+              </div>
+            ))}
           </div>
         </div>
       </div>
