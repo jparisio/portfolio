@@ -45,13 +45,13 @@
   right: 0;
   top: 0;
   position: fixed;
-  background-color: white;
+  background-color: #212121;
   z-index: 98;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
   border-radius: 10px;
 }
 
@@ -74,6 +74,7 @@
 
 .link {
   position: relative;
+  color: #dedede;
   /* Add other styles for your link as needed */
   /* font-size: 2rem; */
 }
@@ -83,7 +84,7 @@
   position: absolute;
   height: 8px;
   width: 8px;
-  background-color: black;
+  background-color: #dedede;
   border-radius: 50%;
   margin-top: 10px;
   margin-left: 30px;
