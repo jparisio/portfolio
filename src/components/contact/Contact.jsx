@@ -1,25 +1,56 @@
 import "./Contact.css";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import WavyWords from "../wavy words/WavyWords";
+import { motion, useAnimation } from "framer-motion";
 import Magnetic from "../Magnetic";
-import Scene from "../Scene";
+
 export default function Contact() {
+  const controls = useAnimation();
+
   return (
     <div className="contact-container" id="contact">
       <div className="magnetic-circle">
-        <Magnetic optionalClass={"magnetic-hover"}>
-          <Magnetic optionalClass={"view"}>
-            <a
-              href="mailto:justinparisio12@icloud.com"
+        <motion.div
+          onHoverStart={() => {
+            // Immediately place the blue fill below the circle...
+            controls.set({ y: "100%" });
+            // ... then animate it into view (covering the circle)
+            controls.start({
+              y: 0,
+              transition: { duration: 0.5, ease: "easeInOut" },
+            });
+          }}
+          onHoverEnd={() => {
+            // On hover end, animate the blue fill upward (off the circle)
+            controls.start({
+              y: "-100%",
+              transition: { duration: 0.5, ease: "easeInOut" },
+            });
+          }}
+          style={{ position: "relative", width: "100%", height: "100%" }}
+        >
+          <Magnetic optionalClass={"magnetic-hover"}>
+            {/* Blue fill controlled by Framer Motion */}
+            <motion.div
+              className="blue-fill"
+              animate={controls}
+              initial={{ y: "-100%" }} // hidden above on initial render
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                position: "absolute",
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                backgroundColor: "#023e8a",
+                zIndex: 0, // Ensure it's behind the content
               }}
-            ></a>
-            <h1>CONTACT</h1>
+            />
+            <Magnetic optionalClass={"view"}>
+              <a
+                href="mailto:justinparisio12@icloud.com"
+                style={{ textDecoration: "none", color: "inherit" }}
+              ></a>
+              <h1>CONTACT</h1>
+            </Magnetic>
           </Magnetic>
-        </Magnetic>
+        </motion.div>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import Contact from "./components/contact/Contact";
 import Sidebar from "./components/sidebar/Sidebar";
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
+import Footer from "./components/footer/Footer";
 import Mouse from "./components/Mouse";
 import Scene from "./components/Scene";
 import Lenis from "@studio-freight/lenis";
@@ -57,6 +58,7 @@ export default function App() {
       {/* </div> */}
       {/* <Scene /> */}
       <Contact />
+      <Footer />
     </>
   );
 }
