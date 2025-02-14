@@ -7,6 +7,12 @@ export default function Contact() {
 
   return (
     <div className="contact-container" id="contact">
+      {/* Background text behind the circle */}
+      <div className="contact-background-text">
+        <h2 className="top-left">LET'S GET</h2>
+        <h2 className="bottom-right">IN TOUCH</h2>
+      </div>
+
       <div className="magnetic-circle">
         <motion.div
           onHoverStart={() => {
@@ -39,7 +45,7 @@ export default function Contact() {
                 height: "200px",
                 borderRadius: "50%",
                 backgroundColor: "#023e8a",
-                zIndex: 0, // Ensure it's behind the content
+                zIndex: 0, // Ensure it's behind the "CONTACT" text
               }}
             />
             <Magnetic optionalClass={"view"}>
