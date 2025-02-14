@@ -99,7 +99,7 @@ export default function Projects() {
   return (
     <>
       {/* Intro Section */}
-      <div className="projects-intro-container" id="projects">
+      {/* <div className="projects-intro-container" id="projects">
         <motion.div className="test-title">
           <div>
             {"PROJECTS".split("").map((letter, index) => (
@@ -123,7 +123,7 @@ export default function Projects() {
         </motion.div>
         <div className="projects-intro"></div>
         <div className="projects-intro-2"></div>
-      </div>
+      </div> */}
 
       {/* A tall scroll wrapper that controls page scroll */}
       <div ref={scrollWrapperRef} className="scroll-wrapper">

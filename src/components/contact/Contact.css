@@ -26,7 +26,7 @@
 .contact-background-text h2 {
   position: absolute;
   margin: 0;
-  font-weight: 900;
+  font-weight: 00;
   letter-spacing: -2px;
   opacity: 0.08; /* Subtle look behind the circle */
   color: #212121; /* Dark text color */
