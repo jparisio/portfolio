@@ -1,57 +1,104 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+  useInView,
+} from "framer-motion";
 import "./Projects.css";
-import { useScroll, useInView } from "framer-motion";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import Project from "./Project";
+
+const projects = [
+  {
+    title: "GAME DEMO",
+    number: "01",
+    description:
+      "A game maker project that I have been working on for a little over a year now...",
+    img: "/portfolio-img4.jpg",
+    link: "https://www.youtube.com/watch?v=ndpQz5A-CuQ",
+    video: "/game.mp4",
+    frameworks: ["gml", "hlsl", "2024"],
+  },
+  {
+    title: "FILMDLE",
+    number: "02",
+    description: "A word guessing game inspired by the likes of wordle...",
+    img: "/portfolio-img3.jpg",
+    link: "https://filmdlegame.com",
+    video: "/filmdle.mp4",
+    frameworks: ["react", "framer", "2024"],
+  },
+  {
+    title: "DIT CANADA",
+    number: "03",
+    description: "A premium website I created for DIT Canada...",
+    img: "/portfolio-img5.jpg",
+    link: "https://roofing-website-test.netlify.app",
+    video: "/roofing.mp4",
+    frameworks: ["react", "framer", "2025"],
+  },
+];
+
+// (Variants for digit animations remain the same)
+const digitVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+};
+
+const numberContainerVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.1,
+      staggerDirection: -1,
+    },
+  },
+};
 
 export default function Projects() {
-  //this is for scroll animation
-  const container = useRef(null);
+  // Use the scroll-wrapper as our scroll container
+  const scrollWrapperRef = useRef(null);
+  // For tracking scroll progress from the window (or our tall wrapper)
   const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start ", "end end"],
+    target: scrollWrapperRef,
+    offset: ["start start", "end end"],
   });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [textHeight, setTextHeight] = useState(50);
+  const textItemRef = useRef(null);
 
-  //this is for the animation of the title
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Triggers animation only once
+  // Measure the height of one text item for the title slider.
+  useEffect(() => {
+    if (textItemRef.current) {
+      setTextHeight(textItemRef.current.clientHeight);
+    }
+  }, []);
 
-  const projects = [
-    {
-      title: "GAME DEMO",
-      number: "01",
-      description:
-        "A game maker project that I have been working on for a little over a year now. Ive collaberated with people across the world in order to bring this project to life. Includes high quality pixel art, fluid animations, smooth gameplay and tight movement",
-      img: "/portfolio-img4.jpg",
-      link: "https://www.youtube.com/watch?v=ndpQz5A-CuQ",
-      video: "/game.mp4",
-      frameworks: ["gml", "hlsl", "2024"],
-    },
-    {
-      title: "FILMDLE",
-      number: "02",
-      description:
-        "A word guessing game inspired by the likes of wordle.  Guess the film based on 3 stills from the movie.  One attempt per day, and a new film every day.  Can you guess them all?",
-      img: "/portfolio-img3.jpg",
-      link: "https://filmdlegame.com",
-      video: "/filmdle.mp4",
-      frameworks: ["react", "framer", "2024"],
-    },
-    {
-      title: "Luxury Roofing",
-      number: "03",
-      description:
-        "A premium website I created for DIT Canada, designed to showcase an upscale experience for businesses seeking to purchase high-end, custom websites.",
-      img: "/portfolio-img5.jpg",
-      link: "https://roofing-website-test.netlify.app",
-      video: "/roofing.mp4",
-      frameworks: ["react", "framer", "2025"],
-    },
-  ];
+  // Map the scroll progress to a project index.
+  const activeIndex = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, projects.length - 1]
+  );
+  useMotionValueEvent(activeIndex, "change", (latest) => {
+    setCurrentIndex(Math.round(latest));
+  });
+  const currentProject = projects[currentIndex];
+
+  // For the intro title animation.
+  const introRef = useRef(null);
+  const isInView = useInView(introRef, { once: true });
 
   return (
     <>
+      {/* Intro Section */}
       <div className="projects-intro-container" id="projects">
         <motion.div className="test-title">
           <div>
@@ -72,109 +119,91 @@ export default function Projects() {
               </span>
             ))}
           </div>
-          <div className="arrow-down" ref={ref}></div>
+          <div className="arrow-down" ref={introRef}></div>
         </motion.div>
         <div className="projects-intro"></div>
         <div className="projects-intro-2"></div>
       </div>
-      <div className="projects-main">
-        {projects.map((project, index) => (
-          <Project {...project} key={index} />
-        ))}
-        <div className="spacer"></div>
+
+      {/* A tall scroll wrapper that controls page scroll */}
+      <div ref={scrollWrapperRef} className="scroll-wrapper">
+        {/* Left images scroll naturally with the page */}
+        <div className="left-scroll">
+          {projects.map((project) => (
+            <div key={project.number} className="project-section">
+              <img
+                src={project.img}
+                alt={project.title}
+                className="project-img"
+              />
+              <div className="video-box">
+                <video
+                  src={project.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="project-video"
+                  onClick={() => window.open(project.link, "_blank")}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* RIGHT: Only the right panel is sticky */}
+        <div className="right-sticky">
+          {/* Numbers Column */}
+          <div className="numbers-column">
+            <div className="number-mask">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentProject.number}
+                  variants={numberContainerVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="number-item"
+                >
+                  {currentProject.number.split("").map((digit, i) => (
+                    <motion.span
+                      key={i}
+                      variants={digitVariants}
+                      transition={{ duration: 0.3, delay: i * 0.1 }}
+                      className="digit"
+                    >
+                      {digit}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Project Title Column */}
+          <div className="names-column">
+            <div className="text-mask" style={{ height: textHeight }}>
+              <motion.div
+                className="text-slider"
+                animate={{ y: -currentIndex * textHeight }}
+                transition={{ type: "tween", duration: 0.6, ease: "easeInOut" }}
+              >
+                {projects.map((project, index) => (
+                  <div
+                    key={project.number}
+                    ref={index === 0 ? textItemRef : null}
+                    className={`text-item ${
+                      index === currentIndex ? "active" : ""
+                    }`}
+                  >
+                    {project.title}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 }
-
-// const ref = useRef(null);
-// const isInView = useInView(ref, { once: false });
-
-// const scale = useTransform(scrollYProgress, [0, 0.7], ["110%", "90%"]);
-// const scale2 = useTransform(scrollYProgress, [0, 0.7], ["110%", "140%"]);
-// const rotate = useTransform(scrollYProgress, [0, 0.7], [0, 90]);
-// const x = useTransform(scrollYProgress, [0.2, 0.7], ["-65%", "50%"]);
-// const x2 = useTransform(scrollYProgress, [0, 0.7], ["-50vw", "15vw"]);
-// const y = useTransform(scrollYProgress, [0.2, 0.7], [40, 0]);
-// const projY = useTransform(scrollYProgress, [0.7, 1], [0, -850]);
-// const borderRadius = useTransform(scrollYProgress, [0.7, 1], [0, 50]);
-// const opacity = useTransform(scrollYProgress, [0.3, 1], [0, 1]);
-
-// console.log(x.get() >= 100);
-
-// const cameraSettings = {
-//   fov: 45,
-//   near: 0.1,
-//   far: 200,
-//   position: [3, 2, 6],
-//   // zoom: 100,
-// };
-
-// const opacity = useTransform(
-//   scrollYProgress,
-//   [0, 0.3, 0.4, 1],
-//   ["0%", "0%", "100%", "100%"]
-// );
-
-//   return (
-//     <>
-//       <div className="projects-wrapper">
-//         <div className="projects-container" ref={container}>
-//           <div className="inner">
-//             <motion.div className="img-container" style={{ scale }}>
-//               <motion.img
-//                 style={{ scale: scale2 }}
-//                 src="/src/assets/mountain.jpg"
-//                 alt="img"
-//               ></motion.img>
-//             </motion.div>
-//           </div>
-
-//           <div className="sliding-number">
-//             <div style={{ display: "flex", alignItems: "center" }}>
-//               {/* The "1" */}
-//               <motion.h1
-//                 className="project-no"
-//                 style={{ x, scale, opacity: 1 }}
-//                 ref={ref}
-//               >
-//                 01
-//               </motion.h1>
-
-//               {/* Vertical "PROJECT" */}
-//               <div
-//                 style={{
-//                   display: "flex",
-//                   flexDirection: "column",
-//                   marginLeft: "10px",
-//                 }}
-//               >
-//                 {"PROJECT".split("").map((letter, index) => (
-//                   <motion.div
-//                     key={index}
-//                     className="project-rotated"
-//                     style={{
-//                       x: x2,
-//                       opacity,
-//                     }}
-//                   >
-//                     {letter}
-//                   </motion.div>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//         <motion.div
-//           className="project-gallery"
-//           style={{ y: projY }}
-//         ></motion.div>
-//       </div>
-//       <div className="project-gallery-one">
-//         <Canvas dpr={[1, 2]} gl={{ antialias: true }} camera={cameraSettings}>
-//           <ThreeTest />
-//         </Canvas>
-//       </div>
-//     </>
-//   );
-// }
