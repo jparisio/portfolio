@@ -50,10 +50,11 @@ export default function Contact() {
             />
             <Magnetic optionalClass={"view"}>
               <a
-                href="mailto:justinparisio12@icloud.com"
+                href="mailto:jparisio@uoguelph.ca"
                 style={{ textDecoration: "none", color: "inherit" }}
-              ></a>
-              <h1>CONTACT</h1>
+              >
+                <h1>CONTACT</h1>
+              </a>
             </Magnetic>
           </Magnetic>
         </motion.div>
