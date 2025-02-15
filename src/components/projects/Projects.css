@@ -163,6 +163,7 @@
 }
 .digit {
   display: inline-block;
+  font-weight: 800;
 }
 
 /* Project Title Column */
