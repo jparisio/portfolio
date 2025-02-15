@@ -114,7 +114,18 @@ export default function Landing({ scrollYProgress }) {
                 developer <span className="mini-number">(2)</span>
               </motion.p>
             </motion.span>
+
+            {/* Animated GIF Image */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.7 }}
+              className="gif-wrapper"
+            >
+              <img src="/jordans.gif" alt="GIF" className="gif-image" />
+            </motion.div>
           </div>
+
           <div className="line-one">
             <motion.span className="letter-wrapper">
               <motion.p
