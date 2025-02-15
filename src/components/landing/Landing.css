@@ -10,12 +10,7 @@
 .intro {
   text-align: center;
   max-width: 900px;
-  /* margin: auto; */
   font-family: "Riccione Serial Medium", sans-serif;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center; */
 }
 
 .intro-overlay {
@@ -23,11 +18,11 @@
   justify-content: flex-end;
   margin-top: 5rem;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
 }
 
 .intro .name {
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 1vw, 1rem);
   font-weight: bold;
   font-family: "gothic light", sans-serif;
   padding-left: 10px;
@@ -35,29 +30,29 @@
 }
 
 .intro h1 {
-  font-size: 9rem;
+  font-size: clamp(4rem, 12vw, 9rem);
   font-weight: bold;
   margin-bottom: 0;
   line-height: 1;
   font-family: "roboto", sans-serif;
   margin-top: 0;
-  height: 8.5rem;
+  height: clamp(4rem, 10vw, 8.5rem);
 }
 
 .intro p {
   margin: 0;
-  font-size: 60px;
+  font-size: clamp(2rem, 6vw, 60px);
 }
 
 .intro .description {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 .intro .location {
-  font-size: 4rem; /* Slightly smaller for location */
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: normal;
   font-family: "gothic light", sans-serif;
 }
@@ -72,7 +67,7 @@
   align-items: center;
   flex-direction: row;
   gap: 1rem;
-  font-size: 40px;
+  font-size: clamp(1.5rem, 4vw, 40px);
 }
 
 .line-one h2 {
@@ -87,7 +82,7 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  padding-bottom: 2px; /* Space for underline */
+  padding-bottom: 2px;
 }
 
 .line-two p::after {
@@ -95,21 +90,20 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 2px; /* Thickness of the underline */
+  height: 2px;
   width: 0;
-  background-color: black; /* Underline color */
+  background-color: black;
   transform-origin: left;
-  transition: width 1s ease; /* Smooth animation over 1s */
+  transition: width 1s ease;
 }
 
-/* Add this class to trigger the animation automatically */
 .line-two p.underline-active::after {
   width: 100%;
 }
 
 .mini-number {
   display: inline-block;
-  font-size: 15px;
+  font-size: clamp(10px, 1vw, 15px);
 }
 
 .line-one .inspired {
@@ -119,27 +113,4 @@
 .letter-wrapper {
   display: inline-block;
   overflow: hidden;
-}
-
-/* Responsive media query for smaller screens */
-@media (max-width: 768px) {
-  .intro h1 {
-    font-size: 12vh; /* Adjust heading size for small screens */
-  }
-
-  .intro p {
-    font-size: 6vh;
-  }
-
-  .line-one {
-    font-size: 5vh;
-  }
-
-  .line-one .location {
-    font-size: 5vh;
-  }
-
-  .intro h1 {
-    height: 12vh;
-  }
 }
