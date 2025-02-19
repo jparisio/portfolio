@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { delay, motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import "./Landing.css";
 
 export default function Landing({ scrollYProgress }) {
@@ -16,10 +15,6 @@ export default function Landing({ scrollYProgress }) {
     // Optional cleanup to clear the timer if the component unmounts
     return () => clearTimeout(timer);
   }, []);
-
-  // const rotate = useTransform(scrollYProgress, [0, 0.5], [0, -10]);
-  // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const initial = {
     y: 400,
@@ -60,7 +55,7 @@ export default function Landing({ scrollYProgress }) {
                   style={{ display: "inline-block" }}
                   initial={initial}
                   animate={animate}
-                  transition={{ delay: index * 0.1, ...transition }}
+                  transition={{ delay: index * 0.08, ...transition }}
                   key={index}
                 >
                   {letter}
@@ -76,7 +71,7 @@ export default function Landing({ scrollYProgress }) {
                 className="location"
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 0.3, ...transition }}
+                transition={{ delay: 0.25, ...transition }}
               >
                 (guelph ON)
               </motion.h2>
@@ -85,7 +80,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 0.5, ...transition }}
+                transition={{ delay: 0.4, ...transition }}
               >
                 is a <span className="mini-number">(1)</span>
               </motion.p>
@@ -97,7 +92,7 @@ export default function Landing({ scrollYProgress }) {
                 className={isComplete ? "underline-active" : "student"}
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 0.7, ...transition }}
+                transition={{ delay: 0.5, ...transition }}
               >
                 student &
               </motion.p>
@@ -109,20 +104,26 @@ export default function Landing({ scrollYProgress }) {
                 className={isComplete ? "underline-active" : "developer"}
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 0.8, ...transition }}
+                transition={{ delay: 0.6, ...transition }}
               >
                 developer <span className="mini-number">(2)</span>
               </motion.p>
             </motion.span>
 
-            {/* Animated GIF Image */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.7 }}
-              className="gif-wrapper"
-            >
-              <img src="/jordans.gif" alt="GIF" className="gif-image" />
+            {/* Animated GIF Image with clip-path */}
+            <motion.div className="gif-wrapper">
+              <motion.img
+                src="/jordans.gif"
+                alt="GIF"
+                className="gif-image"
+                initial={{ clipPath: "inset(100% 0 0 0)" }}
+                animate={{ clipPath: "inset(0% 0 0 0)" }}
+                transition={{
+                  delay: 0.75,
+                  duration: 5,
+                  ease: [0.2, 1, 0.5, 1],
+                }}
+              />
             </motion.div>
           </div>
 
@@ -132,7 +133,7 @@ export default function Landing({ scrollYProgress }) {
                 className="inspired"
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.1, ...transition }}
+                transition={{ delay: 0.75, ...transition }}
               >
                 inspired
               </motion.p>
@@ -141,7 +142,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.3, ...transition }}
+                transition={{ delay: 0.8, ...transition }}
               >
                 by
               </motion.p>
@@ -150,7 +151,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.5, ...transition }}
+                transition={{ delay: 0.9, ...transition }}
               >
                 creativity
               </motion.p>
@@ -161,7 +162,7 @@ export default function Landing({ scrollYProgress }) {
               <motion.p
                 initial={initial}
                 animate={animate}
-                transition={{ delay: 1.7, ...transition }}
+                transition={{ delay: 1, ...transition }}
               >
                 & growth <span className="mini-number">(3)</span>
               </motion.p>
