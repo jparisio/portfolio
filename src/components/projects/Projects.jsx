@@ -44,7 +44,7 @@ const projects = [
     description: "A School rental Site...",
     img: "/portfolio-img2.jpg",
     link: "",
-    video: "/EasyNook.mov",
+    video: "/EasyNook.mp4",
     frameworks: ["react", "python", "2025"],
   },
 ];
