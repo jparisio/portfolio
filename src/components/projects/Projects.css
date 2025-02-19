@@ -83,7 +83,7 @@
 
 /* The scroll wrapper is tall enough to allow scrolling */
 .scroll-wrapper {
-  height: calc(100vh * 3); /* Adjust based on number of projects */
+  height: calc(100vh * 4); /* Adjust based on number of projects */
   position: relative;
   display: flex;
 }

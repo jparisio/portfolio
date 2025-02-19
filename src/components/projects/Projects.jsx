@@ -38,6 +38,15 @@ const projects = [
     video: "/roofing.mp4",
     frameworks: ["react", "framer", "2025"],
   },
+  {
+    title: "EasyNook",
+    number: "04",
+    description: "A School rental Site...",
+    img: "/portfolio-img2.jpg",
+    link: "",
+    video: "/EasyNook.mov",
+    frameworks: ["react", "python", "2025"],
+  },
 ];
 
 // (Variants for digit animations remain the same)
